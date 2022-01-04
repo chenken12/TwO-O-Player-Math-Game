@@ -32,8 +32,7 @@ class Player
 
     rescue TypeError => e  
       # take action
-      puts e
-      incorrect
+      puts "Invaild Input"
     end
     
   end

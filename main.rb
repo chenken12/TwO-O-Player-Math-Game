@@ -17,7 +17,9 @@ while p1.score > 0 && p2.score > 0
     turn = 1
   end
   if p1.score == 0
+    p2.winner
   elsif p2.score == 0
+    p1.winner
   else
     puts "P1: #{p1.score}/3 vs P2: #{p2.score}/3" 
   end
