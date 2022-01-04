@@ -1,21 +1,27 @@
 require './player'
 
-p1 = Player.new("Player 1")
-p2 = Player.new("Player 2")
+p1 = Player.new("1")
+p2 = Player.new("2")
+turn = 1
 
 puts "p1: #{p1.score}" 
 puts "p2: #{p2.score}" 
 
 while p1.score > 0 && p2.score > 0
   puts "----- NEW TURN -----"
-  check = question(p2.name)
-  if check == true 
-    puts "YES! You are correct"
-  else 
-    puts "Seriously No!"
-    p2.incorrect
+  if turn == 1
+    p1.question
+    turn = 2
+  elsif turn == 2
+    p2.question
+    turn = 1
   end
-  puts "P1: #{p1.score} p2: #{p2.score}" 
+  if p1.score == 0
+  elsif p2.score == 0
+  else
+    puts "P1: #{p1.score}/3 vs P2: #{p2.score}/3" 
+  end
+  
 end
 
 puts "----- GAME OVER -----"
